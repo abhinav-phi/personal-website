@@ -3,43 +3,14 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Performance optimizations */
-* {
-    box-sizing: border-box;
-}
-
 html {
-    @apply overflow-x-hidden scroll-smooth;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    text-rendering: optimizeLegibility;
+    @apply overflow-x-hidden scroll-smooth
 }
 
 body {
-    @apply dark:bg-[#00040f] bg-[#e2e2e2ab];
-    overscroll-behavior: none;
-}
 
-/* Optimize animations for mobile */
-@media (prefers-reduced-motion: no-preference) {
-    * {
-        will-change: auto;
-    }
+    @apply dark:bg-[#00040f] bg-[#e2e2e2ab]
 }
-
-/* Improve mobile performance */
-@media (max-width: 768px) {
-    * {
-        transform: translateZ(0);
-        backface-visibility: hidden;
-        perspective: 1000px;
-    }
-    
-    .blur-3xl {
-        filter: blur(20px);
-    }
-}
-
 .split-parent span {
   display: inline-block;
   white-space: pre;
